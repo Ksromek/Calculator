@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 public class CalculatorController {
 
     @FXML
-    public void plus()
+    public void multiple()
     {
         System.out.println("Hello");
     }
