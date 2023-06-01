@@ -15,6 +15,7 @@ public class CalculatorController {
     private String currentNumber = "";
 
     private String calculationType;
+    double previous_equals=0;
 
     @FXML
     void addition(ActionEvent event) {
@@ -46,31 +47,40 @@ public class CalculatorController {
     void equals(ActionEvent event) {
         double firstNumberInt = Integer.parseInt(firstNumber);
         double secondNumberInt = Integer.parseInt(currentNumber);
+        double calculatedNumber = 0;
+        if(previous_equals!=0)
+            firstNumberInt=previous_equals;
 
         switch (calculationType) {
             case "+" -> {
-                double calculatedNumber = firstNumberInt + secondNumberInt;
+                calculatedNumber = firstNumberInt + secondNumberInt;
                 textField.setText(String.valueOf(calculatedNumber));
+                previous_equals=calculatedNumber;
             }
             case "-" -> {
-                double calculatedNumber = firstNumberInt - secondNumberInt;
+                calculatedNumber = firstNumberInt - secondNumberInt;
                 textField.setText(String.valueOf(calculatedNumber));
+                previous_equals=calculatedNumber;
             }
             case "/" -> {
-                double calculatedNumber = firstNumberInt / secondNumberInt;
+                calculatedNumber = firstNumberInt / secondNumberInt;
                 textField.setText(String.valueOf(calculatedNumber));
+                previous_equals=calculatedNumber;
             }
             case "*" -> {
-                double calculatedNumber = firstNumberInt * secondNumberInt;
+                calculatedNumber = firstNumberInt * secondNumberInt;
                 textField.setText(String.valueOf(calculatedNumber));
+                previous_equals=calculatedNumber;
             }
         }
+
     }
 
     @FXML
     void clear(ActionEvent event) {
         currentNumber = "";
         textField.setText("");
+        previous_equals=0;
     }
 
     @FXML
