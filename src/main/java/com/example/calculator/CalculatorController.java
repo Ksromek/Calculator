@@ -54,22 +54,34 @@ public class CalculatorController {
         switch (calculationType) {
             case "+" -> {
                 calculatedNumber = firstNumberInt + secondNumberInt;
-                textField.setText(String.valueOf(calculatedNumber));
+                if(calculatedNumber<0)
+                    textField.setText(String.valueOf(calculatedNumber));
+                else
+                    textField.setText(String.valueOf(calculatedNumber));
                 previous_equals=calculatedNumber;
             }
             case "-" -> {
                 calculatedNumber = firstNumberInt - secondNumberInt;
-                textField.setText(String.valueOf(calculatedNumber));
+                if(calculatedNumber<0)
+                    textField.setText(String.valueOf(calculatedNumber));
+                else
+                    textField.setText(String.valueOf(calculatedNumber));
                 previous_equals=calculatedNumber;
             }
             case "/" -> {
                 calculatedNumber = firstNumberInt / secondNumberInt;
-                textField.setText(String.valueOf(calculatedNumber));
+                if(calculatedNumber<0)
+                    textField.setText(String.valueOf(calculatedNumber));
+                else
+                    textField.setText(String.valueOf(calculatedNumber));
                 previous_equals=calculatedNumber;
             }
             case "*" -> {
                 calculatedNumber = firstNumberInt * secondNumberInt;
-                textField.setText(String.valueOf(calculatedNumber));
+                if(calculatedNumber<0)
+                    textField.setText(String.valueOf(calculatedNumber));
+                else
+                    textField.setText(String.valueOf(calculatedNumber));
                 previous_equals=calculatedNumber;
             }
         }
